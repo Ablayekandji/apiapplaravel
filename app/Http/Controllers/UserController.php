@@ -42,7 +42,7 @@ class UserController extends Controller
         if (!$utulisateur)
             return response(["message" => "pas d'utulisateur avec ce mail $user[email]"]);
 
-        $token = $utulisateur->createToken("nianiaclef")->accessToken;
+        $token = $utulisateur->createToken("nianiaclef")->plainTextToken;
         return response([
             "token" => $token,
             "utulisateur" => $utulisateur
